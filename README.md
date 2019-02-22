@@ -23,7 +23,7 @@ A good example would be to send a confirmation email after someone preorders foo
 
   You should see a page that looks something like this, where you can insert code:
 
-  ![Project Pagge](./project-page.png)
+  ![Project Page](./project-page.png)
 
   
 
@@ -132,31 +132,40 @@ The following code would send alexmacedo2020@u.northwestern.edu an email when Al
 
 ```javascript
 function sendConfirmationEmail(e) {
+  // get info from the form
   var items = e.response.getItemResponses();
-  var name = items[0].getResponse();
   var address = e.response.getRespondentEmail();
-  var subject = "Paleta Order!"
   
+  // get responses
+  var name = items[0].getResponse();
+  var flavor = items[2].getResponse();
+  var quantity = items[3].getResponse();
+    
+  // calculate total
   var price = 2;
-  var quantity = var name = items[3].getResponse();
   var total = price * quantity;
   
+  // construct message
   var greeting = "Hello ".concat(name, ",");
   var thankyou = "\n\nThank you for ordering a Paleta! ";
   var pickup = "You can pick up your order at the MCC anytime from 9am-4pm.";
   var confirmation = "\n\nHere is your order according to our records:";
-  var order = "Flavor - ".concat()
-
+  var order = "\n\nFlavor: ".concat(flavor).concat("\nQuantity: ").concat(quantity).concat("\nTotal: ").concat(total);
+  var venmo = "\n\nPlease venmo @NUODPhi your total.";
   var signature = "\n\nThank you, \nOmega Delta Phi, Alpha Alpha Chapter";
-  var message = greeting.concat(thankyou, breakfast, share, facebook, going, signature);
+  var message = greeting.concat(thankyou, pickup, confirmation, order, venmo, signature);
   
+  // construct subject
+  var subject = "Paleta Order!"
+  
+  // send email
   GmailApp.sendEmail(address, subject, message);
 }
 ```
 
+The email would look like this:
 
-
-***Disclaimer**: I didn't run the above code lol so not 100% sure it works but that's the idea. If someone wants to make a Pull Request to take out this disclaimer after they confirm it works that would be beautiful. Nevertheless I'm fairly confident it should work haha
+![Example Email](./example-email.png)
 
 
 
@@ -172,7 +181,7 @@ If you don't receive an email, there's probably something wrong somewhere in you
 
 #### Trigger Execution Errors
 
-
+![Trigger Execution Errors](./testing-example.png)
 
 
 
