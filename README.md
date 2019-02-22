@@ -55,7 +55,7 @@ A good example would be to send a confirmation email after someone preorders foo
 
 **NOTE: This script inserts the respondent's name by taking their name from the google form. If you want to include this functionality, make sure that the second question after collecting emails is asking for their first name. For more information, look at the Getting User's Responses from the Form**
 
-###Change the Subject and Body of the Email
+### Change the Subject and Body of the Email
 
 ***Note**: If you want to change the subject of body to include any responses from the form then look below at **Getting User's Responses from the Form**.
 
@@ -69,7 +69,7 @@ This is the piece of code that tells Gmail to send the email from the account th
 
 It's probably best to not mess with the address, or 
 
-####Subject
+#### Subject
 
 The `subject` variable that we pass to `GmailApp.sendEmail()` is made in line 5:
 
@@ -79,13 +79,13 @@ var subject = "César Chávez Day of Service"
 
 Change the subject to be whatever you want by changing what's inside the double quotes
 
-####Message
+#### Message
 
 
 
 
 
-###Getting User's Responses from the Form
+### Getting User's Responses from the Form
 
 As of right now, the only thing personalized in the email is the respondent's name. The way we get the name is on lines 2 and 3 of the code when we say :
 
