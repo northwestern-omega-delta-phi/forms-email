@@ -150,7 +150,7 @@ function sendConfirmationEmail(e) {
   var thankyou = "\n\nThank you for ordering a Paleta! ";
   var pickup = "You can pick up your order at the MCC anytime from 9am-4pm.";
   var confirmation = "\n\nHere is your order according to our records:";
-  var order = "\n\nFlavor: ".concat(flavor).concat("\nQuantity: ").concat(quantity).concat("\nTotal: ").concat(total);
+  var order = "\n\nFlavor: ".concat(flavor, "\nQuantity: ", quantity, "\nTotal: ", total);
   var venmo = "\n\nPlease venmo @NUODPhi your total.";
   var signature = "\n\nThank you, \nOmega Delta Phi, Alpha Alpha Chapter";
   var message = greeting.concat(thankyou, pickup, confirmation, order, venmo, signature);
@@ -176,6 +176,13 @@ To test it out, just start filling out the form as if you were a user! Make sure
 If you don't receive an email, there's probably something wrong somewhere in your code and the javascript won't compile, meaning it doesn't understand what you wrote. To solve errors like this you can do one of two things:
 
 #### Logging
+
+```javascript
+var items = e.response.getItemResponses();
+var name = items[0].getResponse();
+var address = e.response.getRespondentEmail();
+Logger.log("FIRSTNAME = %s, ADDRESS = %s", name, address);
+```
 
 
 
