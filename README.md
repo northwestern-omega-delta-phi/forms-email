@@ -47,7 +47,9 @@ A good example would be to send a confirmation email after someone preorders foo
     - Click on "Gmail API"
     - Click on the box that says "Enable"
 
-- Your done! If you want to change what the email says
+- Your done! If you want to change what the email says look below at the Customization section
+
+***NOTE**: This script inserts the respondent's name by taking their name from the google form. If you want to include this functionality, make sure that the second question after collecting emails is asking for their first name
 
 
 
