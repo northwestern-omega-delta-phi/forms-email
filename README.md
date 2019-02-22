@@ -23,7 +23,7 @@ A good example would be to send a confirmation email after someone preorders foo
 
   You should see a page that looks something like this, where you can insert code:
 
-  ![image-20190222125503221](/Users/gabrielrojas-westall/Library/Application Support/typora-user-images/image-20190222125503221.png)
+  ![Project Pagge](./project-page.png)
 
   
 
