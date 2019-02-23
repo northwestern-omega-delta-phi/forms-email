@@ -47,7 +47,7 @@ A good example would be to send a confirmation email after someone preorders foo
     - Click on "Gmail API"
     - Click on the box that says "Enable"
 
-- Your done! To change what the email says look below at the Customization section.
+- You're done! To change what the email says look below at the Customization section.
 
 
 
@@ -81,11 +81,21 @@ Change the subject to be whatever you want by changing what's inside the double 
 
 #### Message
 
+The `message` variable that we pass to GmailApp.sendEmail()` is made in line 14:
+
+```javascript
+var message = greeting.concat(thankyou, breakfast, share, facebook, going, signature);
+```
+
+`.concat()` is used to combine text into one larger piece of text. In lines 7-13, we define the pieces of text that we want to combine. We could just define one large piece of text in one line, but that becomes difficult to read. Therefore, we split it up how we have it in `Code.js` defining lots of smaller pieces of text to make the code more readable. 
+
+`.concat() ` can take as many variables or strings (strings are text with "" around them) that you want to combine, just make sure you separate them with a comma and you apply it to an already existing string. Also, don't forget the parentheses!
+
+Wherever you see `\n` in the code is just used to create new lines (the equivalent of pressing enter in a Word doc). That's why we have `\n\n` before we start `thankyou` on line 8 after the greeting.
 
 
 
-
-### Getting User's Responses from the Form
+### Getting Users' Responses from the Form
 
 As of right now, the only thing personalized in the email is the respondent's name. The way we get the name is on lines 2 and 3 of the code when we say :
 
@@ -101,7 +111,7 @@ The `items` variable is a list of item objects that contains all of the question
 var nthTitle = items[n].getItem().getTitle();
 
 // What they responded
-var nthResponse = Items[n].getResponse();
+var nthResponse = items[n].getResponse();
 ```
 
 Google doesn't count the email as the first item in the form when we turn on "Collect email addresses". So, the first item in the list of items will be the question directly after the question collecting emails at the top. Remember that indexes start from 0, so the first item after email will be the 0th item, and the one after that the 1st item. Assuming that the respondent's first name is the first thing we ask for after the email, the following code can be left as it is in order to get the respondent's first name:
@@ -175,7 +185,9 @@ To test it out, just start filling out the form as if you were a user! Make sure
 
 If you don't receive an email, there's probably something wrong somewhere in your code and the javascript won't compile, meaning it doesn't understand what you wrote. To solve errors like this you can do one of two things:
 
-#### Logging
+### Logging
+
+If you're not sure whether your code is working, you can always look at its value by printing it out. This can be done using `Logger.log()` and then putting whatever you want to put inside. The first and only required thing you need to include inside the parentheses for `Logger.log()` is a string. Optionally, you can include `%s` somewhere in the string that you are logging so that you can print out variables too. Below, we use two `%s`'s so that we can print out `name` and `address`. 
 
 ```javascript
 var items = e.response.getItemResponses();
@@ -184,9 +196,11 @@ var address = e.response.getRespondentEmail();
 Logger.log("FIRSTNAME = %s, ADDRESS = %s", name, address);
 ```
 
+To see the results of your logging, click on View / Logs after you submit a form or run your code by hitting the play button on top.
 
+### Trigger Execution Errors
 
-#### Trigger Execution Errors
+Sometimes, logging won't work because there's something wrong with your code (Javascript doesn't understand what you wrote). If this is the case, then there's still something you can do! Click on Edit / All your triggers, and this should open a new tab. Find the row that has the function "sendConfirmationEmail" and click on the 3 dots on the right side, then click on Executions. You should see something like the image below. The list below lists all the times that the forms was submitted and your code was run. If it didn't work, then the status will be `Failed`. If you click on a failed execution, you can see exactly what went wrong. In this case, there was an error with strings on line 12. We know this because the error had to do with parsing and in parentheses they say `Code:12`.
 
 ![Trigger Execution Errors](./testing-example.png)
 
