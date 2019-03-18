@@ -54,11 +54,11 @@ A good example would be to send a confirmation email after someone pre-orders fo
 
 ## Customization
 
-**NOTE: This script inserts the respondent's name by taking their name from the google form. If you want to include this functionality, make sure that the second question after collecting emails is asking for their first name. For more information, look at the Getting User's Responses from the Form**
+**NOTE: This script inserts the respondent's name by taking their name from the Google Form. If you want to include this functionality, make sure that the second question after collecting emails is asking for the respondent's name. For more information, look at the Getting User's Responses from the Form**
 
 ### Change the Subject and Body of the Email
 
-***Note**: If you want to change the subject of body to include any responses from the form then look below at **Getting User's Responses from the Form**.
+***Note**: If you want to change the email subject or body of the email to include any responses from the form then look below at **Getting User's Responses from the Form**.
 
 In `Code.js` you will see the following code in line 16:
 
@@ -66,7 +66,7 @@ In `Code.js` you will see the following code in line 16:
 GmailApp.sendEmail(address, subject, message);
 ```
 
-This is the piece of code that tells Gmail to send the email from the account that made the google form. It sends it to the email address `address`, with the subject `subject`, and email body `message`.
+This is the piece of code that tells Gmail to send the email from the account that made the Google Form. It sends it to the email address `address`, with the subject `subject`, and email body `message`.
 
 It's probably best to not mess with the address, or 
 
@@ -78,7 +78,7 @@ The `subject` variable that we pass to `GmailApp.sendEmail()` is made in line 5:
 var subject = "César Chávez Day of Service"
 ```
 
-Change the subject to be whatever you want by changing what's inside the double quotes
+Change the subject to be whatever you want by changing what is inside the double quotes
 
 #### Message
 
@@ -98,7 +98,7 @@ Wherever you see `\n` in the code is just used to create new lines (the equivale
 
 ### Getting Users' Responses from the Form
 
-As of right now, the only thing personalized in the email is the respondent's name. The way we get the name is on lines 2 and 3 of the code when we say :
+As of right now, the only thing personalized in the email is the respondent's name. The way we get the name is on lines 2 and 3 of the code when we say:
 
 ```javascript
 var items = e.response.getItemResponses();
@@ -115,7 +115,7 @@ var nthTitle = items[n].getItem().getTitle();
 var nthResponse = items[n].getResponse();
 ```
 
-Google doesn't count the email as the first item in the form when we turn on "Collect email addresses". So, the first item in the list of items will be the question directly after the question collecting emails at the top. Remember that indexes start from 0, so the first item after email will be the 0th item, and the one after that the 1st item. Assuming that the respondent's first name is the first thing we ask for after the email, the following code can be left as it is in order to get the respondent's first name:
+Google does not count the email as the first item in the form when we turn on "Collect email addresses". So, the first item in the list of items will be the question directly after the question collecting emails at the top. Remember that indexes start from 0, so the first item after email will be the 0th item, and the one after that the 1st item. Assuming that the respondent's first name is the first thing we ask for after the email, the following code can be left as it is in order to get the respondent's first name:
 
 ```javascript
 var name = items[0].getResponse();
@@ -182,7 +182,7 @@ The email would look like this:
 
 ## Testing
 
-To test it out, just start filling out the form as if you were a user! Make sure you've saved your code before you submit the form otherwise it won't use the new code you have. You should be able to see what your email looks like as an email if you input your personal email address to the form and send yourself and email with this code.
+To test it out, just start filling out the form as if you were a user! Make sure you've saved your code before you submit the form; otherwise, it won't use the new code you  inputted. You should be able to see what your email looks like as an email if you input your personal email address to the form and send yourself and email with this code.
 
 If you don't receive an email, there's probably something wrong somewhere in your code and the javascript won't compile, meaning it doesn't understand what you wrote. To solve errors like this you can do one of two things:
 
@@ -201,7 +201,7 @@ To see the results of your logging, click on View / Logs after you submit a form
 
 ### Trigger Execution Errors
 
-Sometimes, logging won't work because there's something wrong with your code (Javascript doesn't understand what you wrote). If this is the case, then there's still something you can do! Click on Edit / All your triggers, and this should open a new tab. Find the row that has the function "sendConfirmationEmail" and click on the 3 dots on the right side, then click on Executions. You should see something like the image below. The list below lists all the times that the forms was submitted and your code was run. If it didn't work, then the status will be `Failed`. If you click on a failed execution, you can see exactly what went wrong. In this case, there was an error with strings on line 12. We know this because the error had to do with parsing and in parentheses they say `Code:12`.
+Sometimes, logging won't work because there's something wrong with your code (Javascript doesn't understand what you wrote). If this is the case, then there's still something you can do! Click on Edit -> All your triggers, and this should open a new tab. Find the row that has the function "sendConfirmationEmail" and click on the 3 dots on the right side, then click on Executions. You should see something like the image below. The list below lists all the times that the forms was submitted and your code was run. If it didn't work, then the status will be `Failed`. If you click on a failed execution, you can see exactly what went wrong. In this case, there was an error with strings on line 12. We know this because the error had to do with parsing and in parentheses they say `Code:12`.
 
 ![Trigger Execution Errors](./testing-example.png)
 
