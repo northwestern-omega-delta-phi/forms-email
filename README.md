@@ -182,7 +182,7 @@ The email would look like this:
 
 ## Testing
 
-To test it out, just start filling out the form as if you were a user! Make sure you've saved your code before you submit the form; otherwise, it won't use the new code you  inputted. You should be able to see what your email looks like as an email if you input your personal email address to the form and send yourself and email with this code.
+To test it out, just start filling out the form as if you were a user! Make sure you've saved your code before you submit the form; otherwise, it won't use the new code you have written. You should be able to see what your email looks like as an email if you input your personal email address to the form and send yourself and email with this code.
 
 If you don't receive an email, there's probably something wrong somewhere in your code and the javascript won't compile, meaning it doesn't understand what you wrote. To solve errors like this you can do one of two things:
 
