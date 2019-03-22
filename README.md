@@ -28,7 +28,7 @@ A good example would be to send a confirmation email after someone pre-orders fo
 
   
 
-- Give the project a name where it currrently says "Untitled Project". This name can be anything, but make it unique to this specific script so it's easy to tell what it is if someone ever opens the Google Developer account for this email.
+- Give the project a name where it currrently says "Untitled Project". This name can be anything, but make it unique to this specific forms script so it's easy to tell what it is if someone ever opens the Google Developer account for this email.
 
 - Open [`Code.js`](./Code.js) in this repository and copy and paste the code into `Code.gs` in the new window that opened, replacing the code that was already there. Save the code by pressing ⌘S or clicking File -> Save
 
