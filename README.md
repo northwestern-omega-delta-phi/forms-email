@@ -54,7 +54,7 @@ A good example would be to send a confirmation email after someone pre-orders fo
 
 ## Customization
 
-**NOTE: This script inserts the respondent's name by taking their name from the Google Form. If you want to include this functionality, make sure that the second question after collecting emails is asking for the respondent's name. For more information, look at the Getting User's Responses from the Form**
+**NOTE: This script inserts the respondent's name by taking their name from the Google Form. If you want to include this functionality, make sure that the second question after collecting emails is asking for the respondent's first name. For more information, look at the Getting User's Responses from the Form**
 
 ### Change the Subject and Body of the Email
 
