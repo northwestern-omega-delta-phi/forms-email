@@ -1,5 +1,5 @@
 # forms-email
-This is a script to send the respondent of a Google Form an email from us when the respondent submits a Google Form.  The steps below will show you how to create the script and how to edit it to fit the requirements you need to send the email to respondants of your Google Form.
+This is a script to send the respondent of a Google Form an email from us when the respondent submits a Google Form.  The steps below will show you how to create the script and how to edit it to send a custom email to respondants of your Google Form. Whenever a respondent submits a google form, after following the steps below, your script will be run.
 
 This was originally made to be used for NU ODPhi's [César Chávez Day of Service](https://www.nuodphi.com/ceacutesar-chaacutevez-day-of-service.html) in 2019, but it can be used for any form. There are plenty of things this could be used for. To name a few:
 
